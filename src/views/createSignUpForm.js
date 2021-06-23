@@ -20,6 +20,7 @@ export const createSignUpForm = () => {
 
   userNameInput.placeholder = "Username";
   passWordInput.placeholder = "Password";
+  passWordInput.setAttribute("type", "password");
   signUpContainer.appendChild(userNameInput);
   signUpContainer.appendChild(passWordInput);
   signUpContainer.appendChild(registerBtn);
