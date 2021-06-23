@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -8,13 +10,133 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #d1f6ff;
+  background-color: #f45b69;
+
+  font-family: "Kirang Haerang", cursive;
 }
-#start-page__container {
+#start-page__container,
+#sign-up-container,
+#sign-in-container {
   text-align: center;
-  height: 20%;
-  width: 50%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  padding: 40px;
+  background-color: #0b3866;
+  color: rgba(255, 255, 255, 0.795);
+  border-radius: 10px;
+  font-size: 4rem;
+}
+#start-page__container h3,
+#sign-up-container input,
+#sign-in-container input {
+  margin: 30px;
+  font-size: 1.5rem;
+}
+
+.btn {
+  color: rgba(255, 255, 255, 0.822);
+  background-color: #f45b69;
+  font-size: 1.5rem;
+}
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.795);
+  color: #0b3866;
+}
+
+body {
+  background-color: #f45b69;
+  font-family: "Asap", sans-serif;
+}
+
+/* ================== FORM-SECTION ================== */
+.form {
+  overflow: hidden;
+  background-color: white;
+  padding: 40px 30px 30px 30px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: -webkit-transform 300ms, box-shadow 300ms;
+  -moz-transition: -moz-transform 300ms, box-shadow 300ms;
+  transition: transform 300ms, box-shadow 300ms;
+  box-shadow: 5px 10px 10px rgba(2, 128, 144, 0.2);
+}
+.form::before,
+.form::after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-top-left-radius: 40%;
+  border-top-right-radius: 45%;
+  border-bottom-left-radius: 35%;
+  border-bottom-right-radius: 40%;
+  z-index: -1;
+}
+.form::before {
+  left: 40%;
+  bottom: -130%;
+  background-color: rgba(69, 105, 144, 0.15);
+  -webkit-animation: wawes 6s infinite linear;
+  -moz-animation: wawes 6s infinite linear;
+  animation: wawes 6s infinite linear;
+}
+.form::after {
+  left: 35%;
+  bottom: -125%;
+  background-color: rgba(2, 128, 144, 0.2);
+  -webkit-animation: wawes 7s infinite;
+  -moz-animation: wawes 7s infinite;
+  animation: wawes 7s infinite;
+}
+
+@-webkit-keyframes wawes {
+  from {
+    -webkit-transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes wawes {
+  from {
+    -moz-transform: rotate(0);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@keyframes wawes {
+  from {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 12px;
 }

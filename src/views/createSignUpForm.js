@@ -10,10 +10,19 @@ export const createSignUpForm = () => {
   console.log("sign Up");
   const root = getDomElement(ROOT_ID);
   clearDomElement(ROOT_ID);
-  const signUpContainer = createDomElement("div", { id: "sign-up-container" });
-  const userNameInput = createDomElement("input", { id: "user-name-input" });
-  const passWordInput = createDomElement("input", { id: "password-input" });
-  const registerBtn = createButton("Register", "register-btn");
+  const signUpContainer = createDomElement("div", {
+    id: "sign-up-container",
+    className: "form",
+  });
+  const userNameInput = createDomElement("input", {
+    id: "user-name-input",
+    className: "form-control",
+  });
+  const passWordInput = createDomElement("input", {
+    id: "password-input",
+    className: "form-control",
+  });
+  const registerBtn = createButton("Register", "register-btn", "btn");
   registerBtn.addEventListener("click", (e) => {
     registerUser(e, userNameInput.value, passWordInput.value);
   });

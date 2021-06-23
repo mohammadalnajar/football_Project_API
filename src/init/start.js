@@ -10,13 +10,14 @@ const start = () => {
   const root = getDomElement(ROOT_ID);
   const startPageContainer = createDomElement("div", {
     id: "start-page__container",
+    className: "form",
   });
   const haveAccount = createDomElement("h3");
   const haveNOAccount = createDomElement("h3");
-  const signUpBtn = createButton("Sign Up", "sign-up-btn");
-  const signInBtn = createButton("Sign In", "sign-in-btn");
-  haveAccount.innerText = "Have an account?";
-  haveNOAccount.innerText = "Have no account?";
+  const signUpBtn = createButton("Sign Up", "sign-up-btn", "btn");
+  const signInBtn = createButton("Sign In", "sign-in-btn", "btn");
+  haveAccount.innerText = "Have already an account ?";
+  haveNOAccount.innerText = "Have no account ?";
   signUpBtn.addEventListener("click", () => {
     createSignUpForm();
   });
