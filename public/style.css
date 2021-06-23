@@ -84,8 +84,8 @@ body {
   z-index: -1;
 }
 .form::before {
-  left: 40%;
-  bottom: -130%;
+  left: 20%;
+  bottom: -90%;
   background-color: rgba(69, 105, 144, 0.15);
   -webkit-animation: wawes 6s infinite linear;
   -moz-animation: wawes 6s infinite linear;
@@ -93,7 +93,7 @@ body {
 }
 .form::after {
   left: 35%;
-  bottom: -125%;
+  bottom: -95%;
   background-color: rgba(2, 128, 144, 0.2);
   -webkit-animation: wawes 7s infinite;
   -moz-animation: wawes 7s infinite;
@@ -131,12 +131,4 @@ body {
     -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
-}
-a {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.6);
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  font-size: 12px;
 }
