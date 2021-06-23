@@ -6,7 +6,7 @@ export const registerUser = (e, userName, password) => {
     `user${randomNum()}`,
     JSON.stringify({
       userName,
-      password,
+      passWord: password,
     })
   );
   createSignInForm();
