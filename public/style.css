@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap");
-
+/* #f45b69 */
+:root {
+  --primaryColor: #dad732;
+  --secondaryColor: #0b3866;
+}
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +15,7 @@
   justify-content: center;
   align-items: center;
   background-color: #d1f6ff;
-  background-color: #f45b69;
+  background-color: var(--secondaryColor);
 
   font-family: "Kirang Haerang", cursive;
 }
@@ -23,9 +27,9 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  padding: 40px;
-  background-color: #0b3866;
-  color: rgba(255, 255, 255, 0.795);
+  padding: 30px;
+  background-color: var(--primaryColor);
+  color: var(--secondaryColor);
   border-radius: 10px;
   font-size: 4rem;
 }
@@ -33,21 +37,22 @@
 #sign-up-container input,
 #sign-in-container input {
   margin: 30px;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
 .btn {
   color: rgba(255, 255, 255, 0.822);
-  background-color: #f45b69;
+  background-color: var(--secondaryColor);
   font-size: 1.5rem;
 }
 .btn:hover {
   background-color: rgba(255, 255, 255, 0.795);
-  color: #0b3866;
+  color: var(--primaryColor);
 }
 
 body {
-  background-color: #f45b69;
+  background-color: var(--secondaryColor);
   font-family: "Asap", sans-serif;
 }
 
