@@ -40,7 +40,11 @@
   font-size: 1.8rem;
   font-weight: bold;
 }
-
+#sign-up-container a,
+#sign-in-container a {
+  font-size: 1rem;
+  margin-top: 5px;
+}
 .btn {
   color: rgba(255, 255, 255, 0.822);
   background-color: var(--secondaryColor);
@@ -136,4 +140,13 @@ body {
     -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+.fa-eye-slash,
+.fa-eye {
+  position: absolute;
+  right: 10%;
+  top: 52%;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
