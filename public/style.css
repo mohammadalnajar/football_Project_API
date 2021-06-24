@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap");
+/* @import
+url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 /* #f45b69 */
 :root {
   --primaryColor: #dad732;
@@ -17,7 +19,7 @@
   background-color: #d1f6ff;
   background-color: var(--secondaryColor);
 
-  font-family: "Kirang Haerang", cursive;
+  font-family: "Indie Flower", cursive;
 }
 #start-page__container,
 #sign-up-container,
@@ -39,6 +41,7 @@
   margin: 30px;
   font-size: 1.8rem;
   font-weight: bold;
+  line-height: 1.5em;
 }
 #sign-up-container a,
 #sign-in-container a {
@@ -93,16 +96,16 @@ body {
   z-index: -1;
 }
 .form::before {
-  left: 20%;
-  bottom: -90%;
+  left: 10%;
+  bottom: -100%;
   background-color: rgba(69, 105, 144, 0.15);
   -webkit-animation: wawes 6s infinite linear;
   -moz-animation: wawes 6s infinite linear;
   animation: wawes 6s infinite linear;
 }
 .form::after {
-  left: 35%;
-  bottom: -95%;
+  left: 20%;
+  bottom: -105%;
   background-color: rgba(2, 128, 144, 0.2);
   -webkit-animation: wawes 7s infinite;
   -moz-animation: wawes 7s infinite;
