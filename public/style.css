@@ -49,7 +49,8 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
   margin-top: 7px;
 }
 .passWrong,
-.no-user {
+.no-user,
+.no-input {
   font-size: 1.4rem;
   position: absolute;
   bottom: 0;
@@ -66,7 +67,16 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
   color: var(--secondaryColor);
   font-weight: bold;
 }
-
+#sign-out-btn {
+  color: var(--secondaryColor);
+  background-color: var(--primaryColor);
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+#sign-out-btn:hover {
+  background-color: #fdf900;
+}
 body {
   background-color: var(--secondaryColor);
   font-family: "Asap", sans-serif;
