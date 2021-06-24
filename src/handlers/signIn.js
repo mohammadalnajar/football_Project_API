@@ -24,17 +24,27 @@ export const signIn = (e, usernameInput, passwordInput) => {
         return user;
       } else if (userName === usernameInput && passWord !== passwordInput) {
         // password incorrect
+
         const passWrong = createDomElement("h3", { className: "passWrong" });
         passWrong.textContent = "Password is incorrect!";
         signInContainer.appendChild(passWrong);
         setTimeout(() => {
           passWrong.remove();
         }, 2000);
+
         console.log("incorrect pass");
       }
     });
+
     if (foundUser.length == 0) {
       // user not found
+      const noUser = createDomElement("h3", { className: "no-user" });
+      noUser.textContent = "This user name is not registered yet!";
+      signInContainer.appendChild(noUser);
+      setTimeout(() => {
+        noUser.remove();
+      }, 2000);
+
       console.log("USERNAME NOT FOUND");
     }
   } else {
