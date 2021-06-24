@@ -8,8 +8,8 @@ import clearDomElement from "../utils/clearDomElement.js";
 import signOut from "../handlers/signOut.js";
 
 export const start = () => {
-  const test = JSON.parse(localStorage.getItem("status"));
-  if (test != null && test.signedIn) {
+  const status = JSON.parse(localStorage.getItem("status"));
+  if (status != null && status.signedIn) {
     initializeApplication();
   } else {
     const root = getDomElement(ROOT_ID);
