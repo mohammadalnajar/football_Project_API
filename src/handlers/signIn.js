@@ -1,6 +1,12 @@
+import { SIGN_IN_CONTAINER } from "../constants.js";
 import { initializeApplication } from "../init/start.js";
+import clearDomElement from "../utils/clearDomElement.js";
+import createDomElement from "../utils/createDomElement.js";
+import getDomElement from "../utils/getDomElement.js";
 
 export const signIn = (e, usernameInput, passwordInput) => {
+  const signInContainer = getDomElement(SIGN_IN_CONTAINER);
+
   let savedUsers = [];
   for (const key in localStorage) {
     if (key.includes("user")) {
@@ -18,6 +24,12 @@ export const signIn = (e, usernameInput, passwordInput) => {
         return user;
       } else if (userName === usernameInput && passWord !== passwordInput) {
         // password incorrect
+        const passWrong = createDomElement("h3", { className: "passWrong" });
+        passWrong.textContent = "Password is incorrect!";
+        signInContainer.appendChild(passWrong);
+        setTimeout(() => {
+          passWrong.remove();
+        }, 2000);
         console.log("incorrect pass");
       }
     });
@@ -29,6 +41,5 @@ export const signIn = (e, usernameInput, passwordInput) => {
     console.log("please fill in username and password");
     //   please fill an username and password
   }
-  // console.log(savedUsers);
 };
 export default signIn;

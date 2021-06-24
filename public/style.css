@@ -48,6 +48,13 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
   font-size: 1rem;
   margin-top: 5px;
 }
+.passWrong {
+  font-size: 1.4rem;
+  position: absolute;
+  bottom: 0;
+  font-weight: bold;
+  color: red;
+}
 .btn {
   color: rgba(255, 255, 255, 0.822);
   background-color: var(--secondaryColor);
