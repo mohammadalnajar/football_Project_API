@@ -70,7 +70,7 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
 #sign-out-btn {
   color: var(--secondaryColor);
   background-color: var(--primaryColor);
-  position: absolute;
+  position: fixed;
   top: 5%;
   right: 5%;
 }
