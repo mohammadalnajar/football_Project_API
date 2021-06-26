@@ -3,12 +3,12 @@ import createLeagueMatches from "./createLeagueMatches.js";
 import createLeagueTable from "./createLeagueTable.js";
 import createLeagueTeams from "./createLeagueTeams.js";
 
-export const createLeagueContent = (league) => {
+export const createLeagueContent = async (league) => {
   const bigDiv = createDomElement("div", {
     className: "tab-content",
     id: "nav-tabContent",
   });
-  const teams = createLeagueTeams(league);
+  const teams = await createLeagueTeams(league);
   const table = createLeagueTable(league);
   const matches = createLeagueMatches(league);
   bigDiv.appendChild(teams);
