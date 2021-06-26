@@ -15,6 +15,7 @@ export const createLeagueTable = async (league) => {
   <thead>
     <tr>
       <th scope="col">#</th>
+      <th scope="col"></th>
       <th scope="col">Team Name</th>
       <th scope="col">P</th>
       <th scope="col">W</th>
@@ -32,6 +33,7 @@ export const createLeagueTable = async (league) => {
   );
   table.forEach((team, i) => {
     const {
+      strTeamBadge,
       strTeam,
       intPlayed,
       intWin,
@@ -45,6 +47,7 @@ export const createLeagueTable = async (league) => {
     output += `
     <tr>
   <th scope="row">${i + 1}</th>
+  <td scope="row"><img src=${strTeamBadge} alt=""></td>
   <td>${strTeam}</td>
   <td>${intPlayed}</td>
   <td>${intWin}</td>
