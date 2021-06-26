@@ -23,6 +23,7 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
 }
 .container {
   margin: 20px 0px;
+  background-color: white;
 }
 .league {
   /* added*/
@@ -189,6 +190,9 @@ body {
 .card {
   transition: transform 0.2s ease;
   cursor: pointer;
+  background-color: black;
+  padding: 10px;
+  color: white;
 }
 .card:hover {
   transform: scale(1.07);

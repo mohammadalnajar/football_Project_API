@@ -1,4 +1,4 @@
-import setAttributes from "../handlers/setAttributes.js";
+import setAttributes from "../utils/setAttributes.js";
 import createDomElement from "../utils/createDomElement.js";
 
 export const createLeagueMatches = (league) => {

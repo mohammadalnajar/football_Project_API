@@ -49,7 +49,6 @@ export const createLeaguesList = () => {
         createLeagueTabs(league);
       });
     });
-    console.log(leagues2);
   };
 
   makeList();

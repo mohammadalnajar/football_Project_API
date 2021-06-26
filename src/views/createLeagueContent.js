@@ -9,8 +9,8 @@ export const createLeagueContent = async (league) => {
     id: "nav-tabContent",
   });
   const teams = await createLeagueTeams(league);
-  const table = createLeagueTable(league);
-  const matches = createLeagueMatches(league);
+  const table = await createLeagueTable(league);
+  const matches = await createLeagueMatches(league);
   bigDiv.appendChild(teams);
   bigDiv.appendChild(table);
   bigDiv.appendChild(matches);
