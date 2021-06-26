@@ -1,6 +1,8 @@
 import { Data } from "../data.js";
 import fetchData from "../handlers/fetchData.js";
 import createDomElement from "../utils/createDomElement.js";
+import getDomElement from "../utils/getDomElement.js";
+import createLeagueTabs from "./createLeagueTabs.js";
 
 export const createLeaguesList = () => {
   const bigRow = createDomElement("div", {
@@ -23,7 +25,7 @@ export const createLeaguesList = () => {
       output += `
         <div class="col col-md-2 league">
         <div class="
-            card
+            card league-js
             align-items-center
             justify-content-center
             text-center
@@ -39,6 +41,15 @@ export const createLeaguesList = () => {
         `;
     });
     bigRow.innerHTML = output;
+
+    // select one league ==========
+    const leagues2 = getDomElement(".league-js", "all");
+    leagues2.forEach((league) => {
+      league.addEventListener("click", () => {
+        createLeagueTabs(league);
+      });
+    });
+    console.log(leagues2);
   };
 
   makeList();
