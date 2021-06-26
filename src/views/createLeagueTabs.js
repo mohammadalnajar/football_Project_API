@@ -12,7 +12,7 @@ export const createLeagueTabs = (league) => {
   const bigContainer = getDomElement(BIG_CONTAINER_ID);
 
   const nav = createLeagueNav();
-  const leagueContent = createLeagueContent();
+  const leagueContent = createLeagueContent(league);
   fetchData(
     `https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=${league.dataset.id}`
   );
