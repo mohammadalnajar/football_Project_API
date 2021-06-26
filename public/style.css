@@ -1,6 +1,7 @@
 /* @import
 url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
 /* #f45b69 */
 :root {
   --primaryColor: #dad732;
@@ -19,11 +20,11 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
   background-color: #d1f6ff;
   background-color: var(--secondaryColor);
 
-  font-family: "Indie Flower", cursive;
+  font-family: "Ubuntu", sans-serif;
 }
 .container {
   margin: 20px 0px;
-  background-color: white;
+  /* background-color: white; */
 }
 .league {
   /* added*/
@@ -196,4 +197,17 @@ body {
 }
 .card:hover {
   transform: scale(1.07);
+}
+.table {
+  background-color: white;
+  padding: 10px;
+}
+.spinner-border {
+  color: white;
+  font-size: 20px;
+  height: 4rem;
+  width: 4rem;
+}
+.h-loading {
+  height: 10rem;
 }
