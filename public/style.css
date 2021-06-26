@@ -1,0 +1,195 @@
+/* @import
+url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+/* #f45b69 */
+:root {
+  --primaryColor: #dad732;
+  --secondaryColor: #0b3866;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d1f6ff;
+  background-color: var(--secondaryColor);
+
+  font-family: "Indie Flower", cursive;
+}
+.container {
+  margin: 20px 0px;
+}
+.league {
+  /* added*/
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+}
+.league img {
+  /* added*/
+  width: 90%;
+  margin: 5px;
+}
+#start-page__container,
+#sign-up-container,
+#sign-in-container {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+  background-color: var(--primaryColor);
+  color: var(--secondaryColor);
+  border-radius: 10px;
+  font-size: 4rem;
+}
+#start-page__container h3,
+#sign-up-container input,
+#sign-in-container input {
+  margin: 30px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 1.5em;
+}
+#sign-up-container a,
+#sign-in-container a {
+  font-size: 1.2rem;
+  margin-top: 7px;
+}
+.passWrong,
+.no-user,
+.no-input {
+  font-size: 1.4rem;
+  position: absolute;
+  bottom: 0;
+  font-weight: bold;
+  color: red;
+}
+.btn {
+  color: rgba(255, 255, 255, 0.822);
+  background-color: var(--secondaryColor);
+  font-size: 1.5rem;
+}
+.btn:hover {
+  background-color: rgb(255, 255, 255);
+  color: var(--secondaryColor);
+  font-weight: bold;
+}
+#sign-out-btn {
+  color: var(--secondaryColor);
+  background-color: var(--primaryColor);
+  position: fixed;
+  top: 5%;
+  right: 5%;
+}
+#sign-out-btn:hover {
+  background-color: #fdf900;
+}
+body {
+  background-color: var(--secondaryColor);
+  font-family: "Asap", sans-serif;
+}
+
+/* ================== FORM-SECTION ================== */
+.form {
+  overflow: hidden;
+  background-color: white;
+  padding: 40px 30px 30px 30px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: -webkit-transform 300ms, box-shadow 300ms;
+  -moz-transition: -moz-transform 300ms, box-shadow 300ms;
+  transition: transform 300ms, box-shadow 300ms;
+  box-shadow: 5px 10px 10px rgba(2, 128, 144, 0.2);
+}
+.form::before,
+.form::after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-top-left-radius: 40%;
+  border-top-right-radius: 45%;
+  border-bottom-left-radius: 35%;
+  border-bottom-right-radius: 40%;
+  z-index: -1;
+}
+.form::before {
+  left: 10%;
+  bottom: -100%;
+  background-color: rgba(69, 105, 144, 0.15);
+  -webkit-animation: wawes 6s infinite linear;
+  -moz-animation: wawes 6s infinite linear;
+  animation: wawes 6s infinite linear;
+}
+.form::after {
+  left: 20%;
+  bottom: -105%;
+  background-color: rgba(2, 128, 144, 0.2);
+  -webkit-animation: wawes 7s infinite;
+  -moz-animation: wawes 7s infinite;
+  animation: wawes 7s infinite;
+}
+
+@-webkit-keyframes wawes {
+  from {
+    -webkit-transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes wawes {
+  from {
+    -moz-transform: rotate(0);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@keyframes wawes {
+  from {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.fa-eye-slash,
+.fa-eye {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.card {
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+.card:hover {
+  transform: scale(1.07);
+}
