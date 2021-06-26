@@ -10,7 +10,7 @@ export const createLeagueTeams = (league) => {
     role: "tabpanel",
     "aria-labelledby": "nav-home-tab",
   });
-  teamsDiv.innerHTML = "Teams";
+  teamsDiv.innerHTML = "Teamss";
   return teamsDiv;
 };
 export default createLeagueTeams;
