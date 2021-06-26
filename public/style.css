@@ -12,7 +12,7 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
 }
 
 #root {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,6 +20,20 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
   background-color: var(--secondaryColor);
 
   font-family: "Indie Flower", cursive;
+}
+.container {
+  margin: 20px 0px;
+}
+.league {
+  /* added*/
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+}
+.league img {
+  /* added*/
+  width: 90%;
+  margin: 5px;
 }
 #start-page__container,
 #sign-up-container,
@@ -70,7 +84,7 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
 #sign-out-btn {
   color: var(--secondaryColor);
   background-color: var(--primaryColor);
-  position: absolute;
+  position: fixed;
   top: 5%;
   right: 5%;
 }
@@ -171,4 +185,11 @@ body {
   top: 50%;
   font-size: 1.5rem;
   cursor: pointer;
+}
+.card {
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+.card:hover {
+  transform: scale(1.07);
 }

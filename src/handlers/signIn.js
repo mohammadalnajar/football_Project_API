@@ -1,6 +1,6 @@
 import { SIGN_IN_CONTAINER } from "../constants.js";
-import { initializeApplication } from "../init/start.js";
-import clearDomElement from "../utils/clearDomElement.js";
+import initializeApplication from "../init/initializeApplication.js";
+
 import createDomElement from "../utils/createDomElement.js";
 import getDomElement from "../utils/getDomElement.js";
 
