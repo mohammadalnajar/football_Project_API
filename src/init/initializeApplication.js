@@ -4,6 +4,7 @@ import clearDomElement from "../utils/clearDomElement.js";
 import createDomElement from "../utils/createDomElement.js";
 import getDomElement from "../utils/getDomElement.js";
 import { createButton } from "../views/createButton.js";
+import createLeaguesList from "../views/createLeaguesList.js";
 import createSearchControls from "../views/createSearchControls.js";
 
 export const initializeApplication = () => {
@@ -17,9 +18,15 @@ export const initializeApplication = () => {
   const flexContainer = createDomElement("div", {
     className: "d-flex flex-column",
   });
+
+  // search Controls =====================
   const searchControls = createSearchControls();
 
+  // Leagues List =================
+  const leaguesList = createLeaguesList();
+
   flexContainer.appendChild(searchControls);
+  flexContainer.appendChild(leaguesList);
   bigContainer.appendChild(flexContainer);
   root.appendChild(bigContainer);
   root.appendChild(signOutBtn);

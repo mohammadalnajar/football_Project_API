@@ -24,14 +24,12 @@ export const createSearchControls = () => {
       </ul>
     </div>
     <div class="nav-item dropdown col-sm-3">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Area
-      </a>
-      <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="">
-      <li><a class="dropdown-item" href="#">Spain</a></li>
-  <li><a class="dropdown-item" href="#">Italy</a></li>
-  <li><a class="dropdown-item" href="#">Netherlands</a></li>
-      </ul>
+    <select class="form-select" aria-label="Default select example">
+    <option selected>Open this select menu</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
     </div>
   </div>`;
 
