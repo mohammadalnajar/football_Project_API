@@ -23,7 +23,7 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
   font-family: "Ubuntu", sans-serif;
 }
 .container {
-  margin: 20px 0px;
+  margin: 60px 0px 20px 0px;
   /* background-color: white; */
 }
 .league {
@@ -86,9 +86,9 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
 #sign-out-btn {
   color: var(--secondaryColor);
   background-color: var(--primaryColor);
-  position: fixed;
-  top: 5%;
-  right: 5%;
+  position: absolute;
+  top: 1%;
+  right: 1%;
 }
 #sign-out-btn:hover {
   background-color: #fdf900;

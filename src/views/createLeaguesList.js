@@ -9,7 +9,6 @@ export const createLeaguesList = () => {
   const bigRow = createDomElement("div", {
     className: "row justify-content-center",
   });
-  const bigContainer = getDomElement(BIG_CONTAINER_ID);
   const div = createDomElement("div", {
     className: "d-flex justify-content-center h-loading",
   });
