@@ -1,5 +1,6 @@
 export const ROOT_ID = "#root";
 export const BIG_CONTAINER_ID = ".container";
+export const FLEX_CONTAINER_ID = ".container .d-flex";
 export const START_PAGE_CONTAINER_ID = "#start-page__container";
 export const SIGN_UP_CONTAINER = "#sign-up-container";
 export const SIGN_IN_CONTAINER = "#sign-in-container";

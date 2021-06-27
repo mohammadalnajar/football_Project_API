@@ -1,7 +1,9 @@
-import setAttributes from "../handlers/setAttributes.js";
+import setAttributes from "../utils/setAttributes.js";
 import createDomElement from "../utils/createDomElement.js";
+import fetchData from "../handlers/fetchData.js";
+import { Data } from "../data.js";
 
-export const createLeagueTable = (league) => {
+export const createLeagueTable = async (league) => {
   const tableDiv = createDomElement("div", {
     className: "tab-pane fade",
     id: "nav-profile",
@@ -10,7 +12,61 @@ export const createLeagueTable = (league) => {
     role: "tabpanel",
     "aria-labelledby": "nav-profile-tab",
   });
-  tableDiv.innerHTML = "table";
+  let output = ` <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"></th>
+      <th scope="col">Team Name</th>
+      <th scope="col">P</th>
+      <th scope="col">W</th>
+      <th scope="col">D</th>
+      <th scope="col">L</th>
+      <th scope="col">F</th>
+      <th scope="col">A</th>
+      <th scope="col">GD</th>
+      <th scope="col">PTS</th>
+    </tr>
+  </thead>
+  <tbody class="tbody"> `;
+  const { table } = await fetchData(
+    `https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=${league.dataset.id}&s=2020-2021`
+  );
+  table.forEach((team) => {
+    Data.teamsIcons[team.idTeam] = team.strTeamBadge;
+    const {
+      intRank,
+      strTeamBadge,
+      strTeam,
+      intPlayed,
+      intWin,
+      intDraw,
+      intLoss,
+      intGoalsFor,
+      intGoalsAgainst,
+      intGoalDifference,
+      intPoints,
+    } = team;
+    output += `
+    <tr>
+  <th scope="row">${intRank}</th>
+  <td scope="row"><img src=${strTeamBadge} alt=""></td>
+  <td>${strTeam}</td>
+  <td>${intPlayed}</td>
+  <td>${intWin}</td>
+  <td>${intDraw}</td>
+  <td>${intLoss}</td>
+  <td>${intGoalsFor}</td>
+  <td>${intGoalsAgainst}</td>
+  <td>${intGoalDifference}</td>
+  <td>${intPoints}</td>
+</tr>
+
+    `;
+  });
+  output += `</tbody>
+  </table>`;
+  tableDiv.innerHTML = output;
   return tableDiv;
 };
 export default createLeagueTable;

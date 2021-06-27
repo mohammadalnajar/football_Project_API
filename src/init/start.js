@@ -16,6 +16,7 @@ export const start = () => {
       id: "start-page__container",
       className: "form",
     });
+    const background = createDomElement("div", { className: "background" });
     const haveAccount = createDomElement("h3");
     const haveNOAccount = createDomElement("h3");
     const signUpBtn = createButton("Sign Up", "sign-up-btn", "btn");
@@ -33,6 +34,7 @@ export const start = () => {
     startPageContainer.appendChild(signUpBtn);
     startPageContainer.appendChild(haveAccount);
     startPageContainer.appendChild(signInBtn);
+    root.appendChild(background);
     root.appendChild(startPageContainer);
     console.log(root);
   }
