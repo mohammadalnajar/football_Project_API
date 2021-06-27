@@ -3,6 +3,12 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
 /* #f45b69   #0b3866  #dad732*/
+
+/* 
+#F9E848 / #F7DE2A yellow;
+#2646BE blue
+
+*/
 :root {
   --primaryColor: #dad732;
   --secondaryColor: #0b3866;
@@ -17,12 +23,7 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("https://georgebets.com/wp-content/uploads/2019/06/poisson-distribution-for-predicting-football-matches-735x400.png")
-    no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+
   /* background-color: var(--secondaryColor); */
 
   font-family: "Ubuntu", sans-serif;
@@ -55,6 +56,7 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
   color: var(--secondaryColor);
   border-radius: 10px;
   font-size: 4rem;
+  z-index: 1;
 }
 #start-page__container h3,
 #sign-up-container input,
@@ -117,19 +119,21 @@ body {
 
 /* ================== FORM-SECTION ================== */
 .form {
+  border: 2px solid white;
   overflow: hidden;
   background-color: white;
   padding: 40px 30px 30px 30px;
   border-radius: 10px;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 15%;
+  right: 10%;
   width: 400px;
-  -webkit-transform: translate(-50%, -50%);
+
+  /* -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   -webkit-transition: -webkit-transform 300ms, box-shadow 300ms;
   -moz-transition: -moz-transform 300ms, box-shadow 300ms;
   transition: transform 300ms, box-shadow 300ms;
@@ -242,4 +246,26 @@ button[data-bs-toggle="tab"]:hover {
 .d-flex.team-details {
   background-color: rgba(0, 0, 0, 0.541);
   color: white;
+}
+.background {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background: url("../assets/1387781.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  filter: blur(1px);
+}
+.background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #f7df2a98, #2646be);
+  opacity: 0.3;
 }

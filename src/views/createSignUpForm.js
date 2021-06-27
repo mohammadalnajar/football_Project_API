@@ -12,6 +12,7 @@ export const createSignUpForm = () => {
   console.log("sign Up");
   const root = getDomElement(ROOT_ID);
   clearDomElement(ROOT_ID);
+  const background = createDomElement("div", { className: "background" });
   const signUpContainer = createDomElement("div", {
     id: "sign-up-container",
     className: "form",
@@ -47,6 +48,7 @@ export const createSignUpForm = () => {
   signUpContainer.appendChild(eye);
   signUpContainer.appendChild(registerBtn);
   signUpContainer.appendChild(joinedAlready);
+  root.appendChild(background);
   root.appendChild(signUpContainer);
 };
 export default createSignUpForm;

@@ -9,6 +9,7 @@ import createSignUpForm from "./createSignUpForm.js";
 export const createSignInForm = () => {
   const root = getDomElement(ROOT_ID);
   clearDomElement(ROOT_ID);
+  const background = createDomElement("div", { className: "background" });
   const signInContainer = createDomElement("div", {
     id: "sign-in-container",
     className: "form",
@@ -46,6 +47,7 @@ export const createSignInForm = () => {
   signInContainer.appendChild(eye);
   signInContainer.appendChild(signInBtn);
   signInContainer.appendChild(notJoinedYet);
+  root.appendChild(background);
   root.appendChild(signInContainer);
 };
 export default createSignInForm;
