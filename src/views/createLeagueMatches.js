@@ -31,7 +31,7 @@ export const createLeagueMatches = async (league) => {
   <tbody class="tbody"> `;
 
   const { events } = await fetchData(
-    `https://www.thesportsdb.com/api/v1/json/1/eventspastleage.php?id=${league.dataset.id}`
+    `https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id=${league.dataset.id}`
   );
   events.forEach((event) => {
     let homeIcon;
