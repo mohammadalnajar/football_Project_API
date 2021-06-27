@@ -7,6 +7,7 @@ import setAttributes from "../utils/setAttributes.js";
 import { createButton } from "./createButton.js";
 import createLeagueContent from "./createLeagueContent.js";
 import createLeagueNav from "./createLeagueNav.js";
+import createTeamDetailsPage from "./createTeamDetailsPage.js";
 
 export const createLeagueTabs = async (league) => {
   clearDomElement(BIG_CONTAINER_ID);
@@ -30,5 +31,12 @@ export const createLeagueTabs = async (league) => {
   clearDomElement(BIG_CONTAINER_ID);
   bigContainer.appendChild(nav);
   bigContainer.appendChild(leagueContent);
+
+  const teams = getDomElement(".team-js", "all");
+  teams.forEach((team) => {
+    team.addEventListener("click", () => {
+      createTeamDetailsPage(team);
+    });
+  });
 };
 export default createLeagueTabs;

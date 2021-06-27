@@ -2,7 +2,7 @@
 url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
-/* #f45b69 */
+/* #f45b69   #0b3866  #dad732*/
 :root {
   --primaryColor: #dad732;
   --secondaryColor: #0b3866;
@@ -17,8 +17,13 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #d1f6ff;
-  background-color: var(--secondaryColor);
+  background: url("https://georgebets.com/wp-content/uploads/2019/06/poisson-distribution-for-predicting-football-matches-735x400.png")
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /* background-color: var(--secondaryColor); */
 
   font-family: "Ubuntu", sans-serif;
 }
@@ -203,7 +208,7 @@ body {
 .card {
   transition: transform 0.2s ease;
   cursor: pointer;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.541);
   padding: 10px;
   color: white;
 }
@@ -230,4 +235,11 @@ button[data-bs-toggle="tab"] {
 button[data-bs-toggle="tab"]:hover {
   background-color: #ececec;
   color: var(--secondaryColor);
+}
+.nav-tabs {
+  background-color: #0b3966b4;
+}
+.d-flex.team-details {
+  background-color: rgba(0, 0, 0, 0.541);
+  color: white;
 }

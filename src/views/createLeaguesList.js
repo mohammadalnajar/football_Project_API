@@ -55,6 +55,7 @@ export const createLeaguesList = () => {
     leagues2.forEach((league) => {
       league.addEventListener("click", () => {
         createLeagueTabs(league);
+        Data.selectedLeague.dataset.id = league.dataset.id;
       });
     });
   };
