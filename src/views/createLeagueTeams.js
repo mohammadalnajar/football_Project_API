@@ -29,7 +29,7 @@ export const createLeagueTeams = async (league) => {
     
     <div class="col col-md-2 league">
         <div class="
-            card league-js
+            card team-js
             align-items-center
             justify-content-center
             text-center

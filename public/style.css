@@ -87,11 +87,23 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
   color: var(--secondaryColor);
   background-color: var(--primaryColor);
   position: absolute;
+  padding: 5px;
+  font-size: 1.1rem;
   top: 1%;
   right: 1%;
 }
-#sign-out-btn:hover {
+#sign-out-btn:hover,
+#back-btn:hover {
   background-color: #fdf900;
+}
+#back-btn {
+  color: var(--secondaryColor);
+  background-color: var(--primaryColor);
+  position: absolute;
+  padding: 5px;
+  font-size: 1.1rem;
+  top: 1%;
+  left: 1%;
 }
 body {
   background-color: var(--secondaryColor);
@@ -216,6 +228,6 @@ button[data-bs-toggle="tab"] {
   color: white;
 }
 button[data-bs-toggle="tab"]:hover {
-  background-color: rgb(172, 172, 172);
+  background-color: #ececec;
   color: var(--secondaryColor);
 }
