@@ -15,7 +15,8 @@ export const createLeagueMatches = async (league) => {
   let output = ` <table class="table table-hover">
   <thead>
         <tr>
-          <th scope="col">#</th>
+          <th scope="col"style="text-align:center;vertical-align: middle;">#</th>
+          
           <th style="text-align:center" scope="col">Home</th>
           <th scope="col"></th>
           <th scope="col"></th>
@@ -23,13 +24,14 @@ export const createLeagueMatches = async (league) => {
           <th scope="col"></th>
           <th scope="col"></th>
           <th style="text-align:center" scope="col">Away</th>
-          <th scope="col">datum</th>
+          <th scope="col"style="text-align:center;vertical-align: middle;">Round</th>
+          <th scope="col" style="text-align:center">datum</th>
         </tr>
       </thead>
   <tbody class="tbody"> `;
 
   const { events } = await fetchData(
-    `https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id=${league.dataset.id}`
+    `https://www.thesportsdb.com/api/v1/json/1/eventspastleage.php?id=${league.dataset.id}`
   );
   events.forEach((event) => {
     let homeIcon;
@@ -52,25 +54,27 @@ export const createLeagueMatches = async (league) => {
     } = event;
     output += `
     <tr>
-          <th scope="row">FT</th>
-          <td  style="text-align:center">${strHomeTeam}</td>
+          <th scope="row"style="text-align:center;vertical-align: middle;">FT</th>
+         
+          <td  style="text-align:center;vertical-align: middle;">${strHomeTeam}</td>
           <td >
             <img
               src=${homeIcon}
               alt=""
             />
           </td>
-          <td>${intHomeScore}</td>
-          <td>VS</td>
-          <td>${intAwayScore}</td>
-          <td style="text-align:center">
+          <td style="text-align:center;vertical-align: middle;">${intHomeScore}</td>
+          <td style="text-align:center;vertical-align: middle;">VS</td>
+          <td style="text-align:center;vertical-align: middle;">${intAwayScore}</td>
+          <td style="text-align:center;vertical-align: middle;">
             <img 
               src=${awayIcon}
               alt=""
             />
           </td>
-          <td style="text-align:center" >${strAwayTeam}</td>
-          <td>${dateEvent}</td>
+          <td style="text-align:center;vertical-align: middle;" >${strAwayTeam}</td>
+           <th scope="row"style="text-align:center;vertical-align: middle;">${intRound}</th>
+          <td style="text-align:center;vertical-align: middle;">${dateEvent}</td>
         </tr>
 
     `;
