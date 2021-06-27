@@ -5,12 +5,12 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
 /* #f45b69   #0b3866  #dad732*/
 
 /* 
-#F9E848 / #F7DE2A yellow;
+#F9E848 / #F7DE2A #e7d337 yellow;
 #2646BE blue
 
 */
 :root {
-  --primaryColor: #dad732;
+  --primaryColor: #e7d337;
   --secondaryColor: #0b3866;
 }
 * {
@@ -54,7 +54,7 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
   padding: 30px;
   background-color: var(--primaryColor);
   color: var(--secondaryColor);
-  border-radius: 10px;
+  border-radius: 50px;
   font-size: 4rem;
   z-index: 1;
 }
@@ -84,6 +84,8 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
   color: rgba(255, 255, 255, 0.822);
   background-color: var(--secondaryColor);
   font-size: 1.5rem;
+  border-radius: 50px;
+  padding: 5px 15px;
 }
 .btn:hover {
   background-color: rgb(255, 255, 255);
@@ -94,7 +96,7 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
   color: var(--secondaryColor);
   background-color: var(--primaryColor);
   position: absolute;
-  padding: 5px;
+  padding: 5px 15px;
   font-size: 1.1rem;
   top: 1%;
   right: 1%;
@@ -107,7 +109,7 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
   color: var(--secondaryColor);
   background-color: var(--primaryColor);
   position: absolute;
-  padding: 5px;
+  padding: 5px 15px;
   font-size: 1.1rem;
   top: 1%;
   left: 1%;
@@ -212,7 +214,7 @@ body {
 .card {
   transition: transform 0.2s ease;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.541);
+  background-color: rgba(0, 0, 0, 0.288);
   padding: 10px;
   color: white;
 }
@@ -241,7 +243,19 @@ button[data-bs-toggle="tab"]:hover {
   color: var(--secondaryColor);
 }
 .nav-tabs {
-  background-color: #0b3966b4;
+  /* background-color: #0b3966b4; */
+  background-color: #0b39666b;
+  border-radius: 20px 20px 0px 0px;
+}
+#nav-home-tab {
+  border-radius: 20px 0px 0px 0px;
+}
+#nav-home-tab:hover {
+  border-radius: 20px 0px 0px 0px;
+}
+#nav-profile-tab,
+#nav-contact-tab {
+  border-radius: 0px;
 }
 .d-flex.team-details {
   background-color: rgba(0, 0, 0, 0.541);
@@ -250,13 +264,15 @@ button[data-bs-toggle="tab"]:hover {
 .background {
   width: 100vw;
   height: 100vh;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   background: url("../assets/1387781.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
+  z-index: -1;
   filter: blur(1px);
 }
 .background::after {
@@ -266,6 +282,8 @@ button[data-bs-toggle="tab"]:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #f7df2a98, #2646be);
+  /* background: linear-gradient(to right, #f7df2a98, #2646be); */
+  background: linear-gradient(to right, #000000, #000000);
+
   opacity: 0.3;
 }

@@ -10,6 +10,9 @@ import createSearchControls from "../views/createSearchControls.js";
 export const initializeApplication = () => {
   clearDomElement(ROOT_ID);
   const root = getDomElement(ROOT_ID);
+  const background = createDomElement("div", { className: "background" });
+  background.style.background =
+    'url("../../assets/WallpaperDog-17048551.jpg")no-repeat center center fixed';
   const signOutBtn = createButton("Sign Out", "sign-out-btn", "btn");
   signOutBtn.addEventListener("click", () => {
     signOut();
@@ -24,6 +27,7 @@ export const initializeApplication = () => {
 
   // Leagues List =================
   const leaguesList = createLeaguesList();
+  root.appendChild(background);
 
   flexContainer.appendChild(searchControls);
   flexContainer.appendChild(leaguesList);
