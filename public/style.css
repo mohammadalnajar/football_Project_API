@@ -211,3 +211,11 @@ body {
 .h-loading {
   height: 10rem;
 }
+
+button[data-bs-toggle="tab"] {
+  color: white;
+}
+button[data-bs-toggle="tab"]:hover {
+  background-color: rgb(172, 172, 172);
+  color: var(--secondaryColor);
+}

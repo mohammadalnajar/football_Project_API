@@ -54,7 +54,7 @@ export const createLeagueMatches = async (league) => {
     <tr>
           <th scope="row">FT</th>
           <td  style="text-align:center">${strHomeTeam}</td>
-          <td>
+          <td >
             <img
               src=${homeIcon}
               alt=""
@@ -63,8 +63,8 @@ export const createLeagueMatches = async (league) => {
           <td>${intHomeScore}</td>
           <td>VS</td>
           <td>${intAwayScore}</td>
-          <td>
-            <img
+          <td style="text-align:center">
+            <img 
               src=${awayIcon}
               alt=""
             />
