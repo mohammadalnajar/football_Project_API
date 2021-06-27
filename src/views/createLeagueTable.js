@@ -31,8 +31,9 @@ export const createLeagueTable = async (league) => {
   const { table } = await fetchData(
     `https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=${league.dataset.id}&s=2020-2021`
   );
-  table.forEach((team, i) => {
+  table.forEach((team) => {
     const {
+      intRank,
       strTeamBadge,
       strTeam,
       intPlayed,
@@ -46,7 +47,7 @@ export const createLeagueTable = async (league) => {
     } = team;
     output += `
     <tr>
-  <th scope="row">${i + 1}</th>
+  <th scope="row">${intRank}</th>
   <td scope="row"><img src=${strTeamBadge} alt=""></td>
   <td>${strTeam}</td>
   <td>${intPlayed}</td>
