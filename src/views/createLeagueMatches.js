@@ -31,7 +31,7 @@ export const createLeagueMatches = async (league) => {
   const { events } = await fetchData(
     `https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id=${league.dataset.id}`
   );
-  events.forEach(async (event) => {
+  events.forEach((event) => {
     let homeIcon;
     let awayIcon;
     for (const id in Data.teamsIcons) {
@@ -41,13 +41,7 @@ export const createLeagueMatches = async (league) => {
         awayIcon = Data.teamsIcons[id];
       }
     }
-    console.log(homeIcon);
-    // const homeIcon = table.map((team) => {
-    //   if (event.idHomeTeam === team.idTeam) {
-    //     return team.strTeamBadge;
-    //   }
-    // });
-    // const awayIcon = table.filter((team) => {});
+
     const {
       dateEvent,
       intAwayScore,
