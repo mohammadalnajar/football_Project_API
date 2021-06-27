@@ -1,6 +1,7 @@
 import setAttributes from "../utils/setAttributes.js";
 import createDomElement from "../utils/createDomElement.js";
 import fetchData from "../handlers/fetchData.js";
+import { Data } from "../data.js";
 
 export const createLeagueMatches = async (league) => {
   const matchesDiv = createDomElement("div", {
@@ -26,10 +27,27 @@ export const createLeagueMatches = async (league) => {
         </tr>
       </thead>
   <tbody class="tbody"> `;
+
   const { events } = await fetchData(
     `https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id=${league.dataset.id}`
   );
-  events.forEach((event) => {
+  events.forEach(async (event) => {
+    let homeIcon;
+    let awayIcon;
+    for (const id in Data.teamsIcons) {
+      if (event.idHomeTeam === id) {
+        homeIcon = Data.teamsIcons[id];
+      } else if (event.idAwayTeam === id) {
+        awayIcon = Data.teamsIcons[id];
+      }
+    }
+    console.log(homeIcon);
+    // const homeIcon = table.map((team) => {
+    //   if (event.idHomeTeam === team.idTeam) {
+    //     return team.strTeamBadge;
+    //   }
+    // });
+    // const awayIcon = table.filter((team) => {});
     const {
       dateEvent,
       intAwayScore,
@@ -44,7 +62,7 @@ export const createLeagueMatches = async (league) => {
           <td  style="text-align:center">${strHomeTeam}</td>
           <td>
             <img
-              src="https://www.thesportsdb.com/images/media/team/badge/xqwpup1473502878.png/tiny"
+              src=${homeIcon}
               alt=""
             />
           </td>
@@ -53,7 +71,7 @@ export const createLeagueMatches = async (league) => {
           <td>${intAwayScore}</td>
           <td>
             <img
-              src="https://www.thesportsdb.com/images/media/team/badge/vwvwrw1473502969.png/tiny"
+              src=${awayIcon}
               alt=""
             />
           </td>

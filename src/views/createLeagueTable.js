@@ -1,6 +1,7 @@
 import setAttributes from "../utils/setAttributes.js";
 import createDomElement from "../utils/createDomElement.js";
 import fetchData from "../handlers/fetchData.js";
+import { Data } from "../data.js";
 
 export const createLeagueTable = async (league) => {
   const tableDiv = createDomElement("div", {
@@ -32,6 +33,7 @@ export const createLeagueTable = async (league) => {
     `https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=${league.dataset.id}&s=2020-2021`
   );
   table.forEach((team) => {
+    Data.teamsIcons[team.idTeam] = team.strTeamBadge;
     const {
       intRank,
       strTeamBadge,
