@@ -1,3 +1,5 @@
+import handelError from "./handelError.js";
+
 export const fetchData = async (url) => {
   try {
     const response = await fetch(url);
@@ -5,6 +7,8 @@ export const fetchData = async (url) => {
     console.log(data);
     return data;
   } catch (err) {
+    handelError(err);
+
     console.log(err.message);
   }
 };
