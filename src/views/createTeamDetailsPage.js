@@ -86,7 +86,7 @@ text-center
 <div class="row">
 <div class="col col-md-2">
   <div>
-    <a href=${strFacebook} target="_blank">
+    <a href='https://${strFacebook}' target="_blank">
     <img
       src="https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-512.png"
       alt="..." style="width: 30px"/>
@@ -95,7 +95,7 @@ text-center
 </div>
 <div class="col col-md-2">
   <div>
-  <a href=${strYoutube} target="_blank">
+  <a href='https://${strYoutube}' target="_blank">
     <img
       src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Youtube_colored_svg-512.png"
       alt="..." style="width: 30px"/>
