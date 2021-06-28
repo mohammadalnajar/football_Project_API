@@ -10,6 +10,8 @@ import { createButton } from "./createButton.js";
 export const createTeamDetailsPage = async (team) => {
   clearDomElement(BIG_CONTAINER_ID);
   const bigContainer = getDomElement(BIG_CONTAINER_ID);
+
+  // adding the loading icon
   const div = createDomElement("div", {
     className: "d-flex justify-content-center",
   });
@@ -17,7 +19,8 @@ export const createTeamDetailsPage = async (team) => {
     <span class="visually-hidden">Loading...</span>
   </div>`;
   bigContainer.appendChild(div);
-
+  // ==============
+  // adding a new back btn with nuw functionality
   getDomElement("#back-btn").remove();
   const backBtn = createButton("Go Back", "back-btn");
   setAttributes(backBtn, { class: "btn" });
@@ -25,6 +28,7 @@ export const createTeamDetailsPage = async (team) => {
   backBtn.addEventListener("click", () => {
     goBackToTeamsList(backBtn);
   });
+  // =============
   bigContainer.classList.add("team-details");
   const flexContainer = createDomElement("div", {
     className: "d-flex  flex-column",
@@ -32,7 +36,6 @@ export const createTeamDetailsPage = async (team) => {
   const { teams } = await fetchData(
     `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${team.dataset.id}`
   );
-
   clearDomElement(BIG_CONTAINER_ID);
   const {
     idTeam,
@@ -90,24 +93,30 @@ text-center
 </div>
 <nav>
 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-  <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">EN</button>
-  <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">ES</button>
-  <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">DE</button>
+  <button class="nav-link active" id="nav-english-tab" data-bs-toggle="tab" data-bs-target="#nav-english" type="button" role="tab" aria-controls="nav-english" aria-selected="true">EN</button>
+  <button class="nav-link" id="nav-spanish-tab" data-bs-toggle="tab" data-bs-target="#nav-spanish" type="button" role="tab" aria-controls="nav-spanish" aria-selected="false">ES</button>
+  <button class="nav-link" id="nav-french-tab" data-bs-toggle="tab" data-bs-target="#nav-french" type="button" role="tab" aria-controls="nav-french" aria-selected="false">FR</button>
+  <button class="nav-link" id="nav-german-tab" data-bs-toggle="tab" data-bs-target="#nav-german" type="button" role="tab" aria-controls="nav-german" aria-selected="false">DE</button>
+ 
 </div>
 </nav>
 <div class="tab-content" id="nav-tabContent">
-<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"><div class="row">
+<div class="tab-pane fade show active" id="nav-english" role="tabpanel" aria-labelledby="nav-english-tab"><div class="row">
 <div class="col col-md-12">
   <div  style="width: 100%">
     <div class="card-body d-flex align-items-center" >
       <p class="card-title">
-        ${strDescriptionEN}
+        ${
+          strDescriptionEN != null
+            ? strDescriptionEN
+            : "<strong>Sorry We currently do not have a translated version in English</strong>"
+        }
       </p>
     </div>
   </div>
 </div>
 </div></div>
-<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"><div class="row">
+<div class="tab-pane fade" id="nav-spanish" role="tabpanel" aria-labelledby="nav-spanish-tab"><div class="row">
 <div class="col col-md-12">
   <div  style="width: 100%">
     <div class="card-body d-flex align-items-center" >
@@ -115,14 +124,29 @@ text-center
         ${
           strDescriptionES != null
             ? strDescriptionES
-            : "<strong>Sorry We currently do not have a translated version in DE</strong> <br><strong>Lo sentimos Actualmente no tenemos una versión traducida en español</strong>"
+            : "<strong>Sorry We currently do not have a translated version in Spanish</strong> <br><strong>Lo sentimos Actualmente no tenemos una versión traducida en español</strong>"
         }
       </p>
     </div>
   </div>
 </div>
 </div></div>
-<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"><div class="row">
+<div class="tab-pane fade" id="nav-french" role="tabpanel" aria-labelledby="nav-french-tab"><div class="row">
+<div class="col col-md-12">
+  <div  style="width: 100%">
+    <div class="card-body d-flex align-items-center" >
+      <p class="card-title">
+        ${
+          strDescriptionFR != null
+            ? strDescriptionFR
+            : "<strong>Sorry We currently do not have a translated version in French</strong> <br><strong>Désolé Nous n'avons actuellement pas de version traduite en français</strong>"
+        }
+      </p>
+    </div>
+  </div>
+</div>
+</div></div>
+<div class="tab-pane fade" id="nav-german" role="tabpanel" aria-labelledby="nav-german-tab"><div class="row">
 <div class="col col-md-12">
   <div  style="width: 100%">
     <div class="card-body d-flex align-items-center" >
