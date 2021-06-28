@@ -9,6 +9,15 @@ import { createButton } from "./createButton.js";
 
 export const createTeamDetailsPage = async (team) => {
   clearDomElement(BIG_CONTAINER_ID);
+  const bigContainer = getDomElement(BIG_CONTAINER_ID);
+  const div = createDomElement("div", {
+    className: "d-flex justify-content-center",
+  });
+  div.innerHTML = `<div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>`;
+  bigContainer.appendChild(div);
+
   getDomElement("#back-btn").remove();
   const backBtn = createButton("Go Back", "back-btn");
   setAttributes(backBtn, { class: "btn" });
@@ -16,7 +25,6 @@ export const createTeamDetailsPage = async (team) => {
   backBtn.addEventListener("click", () => {
     goBackToTeamsList(backBtn);
   });
-  const bigContainer = getDomElement(BIG_CONTAINER_ID);
   bigContainer.classList.add("team-details");
   const flexContainer = createDomElement("div", {
     className: "d-flex  flex-column",
@@ -24,6 +32,8 @@ export const createTeamDetailsPage = async (team) => {
   const { teams } = await fetchData(
     `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${team.dataset.id}`
   );
+
+  clearDomElement(BIG_CONTAINER_ID);
   const {
     idTeam,
     intFormedYear,
