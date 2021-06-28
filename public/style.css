@@ -257,14 +257,19 @@ button[data-bs-toggle="tab"]:hover {
   background-color: #0b39666b;
   border-radius: 20px 20px 0px 0px;
 }
-#nav-home-tab {
+#nav-home-tab,
+#nav-english-tab {
   border-radius: 20px 0px 0px 0px;
 }
-#nav-home-tab:hover {
+#nav-home-tab:hover,
+#nav-english-tab:hover {
   border-radius: 20px 0px 0px 0px;
 }
 #nav-profile-tab,
-#nav-contact-tab {
+#nav-contact-tab,
+#nav-french-tab,
+#nav-spanish-tab,
+#nav-german-tab {
   border-radius: 0px;
 }
 .container.team-details {
@@ -335,4 +340,8 @@ button[data-bs-toggle="tab"]:hover {
   .tbody img {
     width: 25px;
   }
+}
+#mapid {
+  height: 180px;
+  margin: 20px;
 }

@@ -7,7 +7,7 @@ import getDomElement from "../utils/getDomElement.js";
 import setAttributes from "../utils/setAttributes.js";
 import { createButton } from "./createButton.js";
 
-export const createTeamDetailsPage = async (team) => {
+export const createTeamDetailsPage = async (teams) => {
   clearDomElement(BIG_CONTAINER_ID);
   const bigContainer = getDomElement(BIG_CONTAINER_ID);
 
@@ -33,9 +33,7 @@ export const createTeamDetailsPage = async (team) => {
   const flexContainer = createDomElement("div", {
     className: "d-flex  flex-column",
   });
-  const { teams } = await fetchData(
-    `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${team.dataset.id}`
-  );
+
   clearDomElement(BIG_CONTAINER_ID);
   const {
     idTeam,
@@ -49,7 +47,7 @@ export const createTeamDetailsPage = async (team) => {
     strFacebook,
     strInstagram,
     strStadium,
-    strStadiumLocation,
+
     strStadiumThumb,
     strTeam,
     strTeamBadge,
@@ -162,7 +160,7 @@ text-center
 </div>
 </div></div>
 </div>
-
+<div id="mapid"></div>
 <div class="row justify-content-center p-3" style="background-color:#ffffff9e;border-radius: 0px 0px 10px 10px">
 <div class="col col-md-2">
   <div style="text-align:center">
