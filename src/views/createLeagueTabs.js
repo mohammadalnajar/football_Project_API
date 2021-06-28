@@ -1,4 +1,5 @@
 import { BIG_CONTAINER_ID, ROOT_ID } from "../constants.js";
+import fetchData from "../handlers/fetchData.js";
 import goBackToLeaguesList from "../handlers/goBackToLeaguesList.js";
 import clearDomElement from "../utils/clearDomElement.js";
 import createDomElement from "../utils/createDomElement.js";
@@ -8,6 +9,7 @@ import { createButton } from "./createButton.js";
 import createLeagueContent from "./createLeagueContent.js";
 import createLeagueNav from "./createLeagueNav.js";
 import createTeamDetailsPage from "./createTeamDetailsPage.js";
+import createTeamMap from "./createTeamMap.js";
 
 export const createLeagueTabs = async (league) => {
   clearDomElement(BIG_CONTAINER_ID);
@@ -34,8 +36,12 @@ export const createLeagueTabs = async (league) => {
 
   const teams = getDomElement(".team-js", "all");
   teams.forEach((team) => {
-    team.addEventListener("click", () => {
-      createTeamDetailsPage(team);
+    team.addEventListener("click", async () => {
+      const { teams } = await fetchData(
+        `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${team.dataset.id}`
+      );
+      createTeamDetailsPage(teams);
+      createTeamMap(teams);
     });
   });
 };

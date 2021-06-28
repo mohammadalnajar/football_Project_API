@@ -222,6 +222,12 @@ body {
   padding: 10px;
   color: white;
 }
+.card-body p {
+  line-height: 1.7rem;
+  letter-spacing: 1px;
+  overflow-y: scroll;
+  max-height: 300px;
+}
 .card:hover {
   transform: scale(1.07);
 }
@@ -251,19 +257,25 @@ button[data-bs-toggle="tab"]:hover {
   background-color: #0b39666b;
   border-radius: 20px 20px 0px 0px;
 }
-#nav-home-tab {
+#nav-home-tab,
+#nav-english-tab {
   border-radius: 20px 0px 0px 0px;
 }
-#nav-home-tab:hover {
+#nav-home-tab:hover,
+#nav-english-tab:hover {
   border-radius: 20px 0px 0px 0px;
 }
 #nav-profile-tab,
-#nav-contact-tab {
+#nav-contact-tab,
+#nav-french-tab,
+#nav-spanish-tab,
+#nav-german-tab {
   border-radius: 0px;
 }
-.d-flex.team-details {
-  background-color: rgba(0, 0, 0, 0.541);
+.container.team-details {
+  background-color: rgba(0, 0, 0, 0.288);
   color: white;
+  border-radius: 10px;
 }
 .background {
   width: 100vw;
@@ -297,7 +309,7 @@ button[data-bs-toggle="tab"]:hover {
   width: 100%;
   height: 100%;
   background: linear-gradient(to right, #000000, #000000);
-  opacity: 0.3;
+  opacity: 0.4;
 }
 .blur {
   filter: blur(5px);
@@ -311,5 +323,25 @@ button[data-bs-toggle="tab"]:hover {
   background-color: #e7d237;
   border-radius: 40px;
   padding: 20px;
+  margin: 20px;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: linear-gradient(transparent, var(--primaryColor));
+}
+@media (max-width: 480px) {
+  #root {
+    font-size: 0.6rem;
+    color: red;
+  }
+  .tbody img {
+    width: 25px;
+  }
+}
+#mapid {
+  height: 180px;
   margin: 20px;
 }
