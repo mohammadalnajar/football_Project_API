@@ -320,3 +320,10 @@ button[data-bs-toggle="tab"]:hover {
   padding: 20px;
   margin: 20px;
 }
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: linear-gradient(transparent, var(--primaryColor));
+}

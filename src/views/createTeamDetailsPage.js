@@ -81,7 +81,7 @@ text-center
 <div class="row">
 <div class="col col-md-12">
   <div  style="width: 100%">
-    <div class="card-body d-flex align-items-center">
+    <div class="card-body d-flex align-items-center" >
       <p class="card-title">
         ${strDescriptionEN}
       </p>
