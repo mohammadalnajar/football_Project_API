@@ -88,7 +88,15 @@ text-center
 </div>
 </div>
 </div>
-<div class="row">
+<nav>
+<div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">EN</button>
+  <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">ES</button>
+  <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">DE</button>
+</div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"><div class="row">
 <div class="col col-md-12">
   <div  style="width: 100%">
     <div class="card-body d-flex align-items-center" >
@@ -98,7 +106,35 @@ text-center
     </div>
   </div>
 </div>
+</div></div>
+<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"><div class="row">
+<div class="col col-md-12">
+  <div  style="width: 100%">
+    <div class="card-body d-flex align-items-center" >
+      <p class="card-title">
+        ${strDescriptionES}
+      </p>
+    </div>
+  </div>
 </div>
+</div></div>
+<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"><div class="row">
+<div class="col col-md-12">
+  <div  style="width: 100%">
+    <div class="card-body d-flex align-items-center" >
+      <p class="card-title">
+        ${
+          strDescriptionDE != null
+            ? strDescriptionDE
+            : "<strong>Sorry We currently do not have a translated version in DE</strong> <br><strong>Leider haben wir derzeit keine übersetzte Version in DE</strong>"
+        }
+      </p>
+    </div>
+  </div>
+</div>
+</div></div>
+</div>
+
 <div class="row justify-content-center p-3" style="background-color:#ffffff9e;border-radius: 0px 0px 10px 10px">
 <div class="col col-md-2">
   <div style="text-align:center">
