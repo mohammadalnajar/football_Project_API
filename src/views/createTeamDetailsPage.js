@@ -112,7 +112,11 @@ text-center
   <div  style="width: 100%">
     <div class="card-body d-flex align-items-center" >
       <p class="card-title">
-        ${strDescriptionES}
+        ${
+          strDescriptionES != null
+            ? strDescriptionES
+            : "<strong>Sorry We currently do not have a translated version in DE</strong> <br><strong>Lo sentimos Actualmente no tenemos una versión traducida en español</strong>"
+        }
       </p>
     </div>
   </div>
@@ -126,7 +130,7 @@ text-center
         ${
           strDescriptionDE != null
             ? strDescriptionDE
-            : "<strong>Sorry We currently do not have a translated version in DE</strong> <br><strong>Leider haben wir derzeit keine übersetzte Version in DE</strong>"
+            : "<strong>Sorry We currently do not have a translated version in DE</strong> <br><strong>Leider haben wir derzeit keine übersetzte Version in Deutsch</strong>"
         }
       </p>
     </div>
