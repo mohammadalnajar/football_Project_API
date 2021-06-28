@@ -17,8 +17,9 @@ export const createTeamDetailsPage = async (team) => {
     goBackToTeamsList(backBtn);
   });
   const bigContainer = getDomElement(BIG_CONTAINER_ID);
+  bigContainer.classList.add("team-details");
   const flexContainer = createDomElement("div", {
-    className: "d-flex team-details flex-column",
+    className: "d-flex  flex-column",
   });
   const { teams } = await fetchData(
     `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${team.dataset.id}`
@@ -44,30 +45,35 @@ export const createTeamDetailsPage = async (team) => {
     strYoutube,
   } = teams[0];
   flexContainer.innerHTML = `
-<div class="row">
+<div class="row " style="align-items: center";>
 <div class="col col-md-6 d-flex justify-content-center">
 <div class="
 team-js
 align-items-center
 justify-content-center
 text-center
-" style="width: 15rem" data-country=${strCountry} data-id=${idTeam}>
+" style="width: 15rem;padding: 2rem;" data-country=${strCountry} data-id=${idTeam}>
 <img src=${strTeamBadge} class="card-img-top" alt="..." style="min-height: 50%">
 <div class="card-body d-flex justify-content-center">
 <h5 class="card-title "style="text-align:center">${strTeam}</h5>
 </div>
 </div>
 </div>
-<div class="col col-md-6 d-flex justify-content-center">
+<div class="col col-md-6 d-flex justify-content-center" style="padding-top: 30px">
 <div class="
 team-js
 align-items-center
 justify-content-center
 text-center
 " style="width: 15rem" data-country=${strCountry} data-id=${idTeam}>
-<img src=${strStadiumThumb} class="card-img-top" alt="..." style="min-height: 50%">
-<div class="card-body d-flex justify-content-center">
-<h5 class="card-title" "style="text-align:center">${strStadium}</h5>
+<img src=${
+    strStadiumThumb != null
+      ? strStadiumThumb
+      : "../../assets/not-found-image.jpg"
+  } class="card-img-top" alt="..." style="min-height: 50%">
+<div class="card-body">
+<h5 class="card-title" "style="text-align:center">${strStadium}</h5><br>
+<h6>The stadium capacity is: ${intStadiumCapacity}</h6>
 </div>
 </div>
 </div>
@@ -76,29 +82,46 @@ text-center
 <div class="col col-md-12">
   <div  style="width: 100%">
     <div class="card-body d-flex align-items-center">
-      <h5 class="card-title">
+      <p class="card-title">
         ${strDescriptionEN}
-      </h5>
+      </p>
     </div>
   </div>
 </div>
 </div>
-<div class="row">
+<div class="row justify-content-center p-3" style="background-color:#ffffff9e;border-radius: 0px 0px 10px 10px">
 <div class="col col-md-2">
-  <div>
-    <a href='https://${strFacebook}' target="_blank">
-    <img
-      src="https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-512.png"
-      alt="..." style="width: 30px"/>
+  <div style="text-align:center">
+    <a href='https://${strFacebook}' style="color:#3b5998"target="_blank">
+    <i class="fab fa-facebook"style="font-size: 1.8rem"></i>
     </a>
   </div>
 </div>
 <div class="col col-md-2">
-  <div>
+  <div style="text-align:center">
   <a href='https://${strYoutube}' target="_blank">
-    <img
-      src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Youtube_colored_svg-512.png"
-      alt="..." style="width: 30px"/>
+  <i class="fab fa-youtube"style="font-size: 1.8rem;color:#ff0000"></i>
+  </a>
+    </div>
+  </div>
+<div class="col col-md-2">
+  <div style="text-align:center">
+  <a href='https://${strWebsite}' target="_blank">
+  <i class="fas fa-globe-europe" style="font-size: 1.8rem"></i>
+  </a>
+    </div>
+  </div>
+<div class="col col-md-2">
+  <div style="text-align:center">
+  <a href='https://${strTwitter}' target="_blank">
+  <i class="fab fa-twitter"style="font-size: 1.8rem"></i>
+  </a>
+    </div>
+  </div>
+<div class="col col-md-2">
+  <div style="text-align:center">
+  <a href='https://${strInstagram}' target="_blank">
+  <i class="fab fa-instagram"style="font-size: 1.8rem;color:#c32aa3"></i>
   </a>
     </div>
   </div>
