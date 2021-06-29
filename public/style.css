@@ -219,6 +219,12 @@ body {
   font-size: 1.5rem;
   cursor: pointer;
 }
+.fa-facebook:hover {
+  color: #1877f2;
+}
+.fa-youtube:hover {
+  color: #cc0000;
+}
 .card {
   transition: transform 0.2s ease;
   cursor: pointer;

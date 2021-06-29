@@ -162,8 +162,8 @@ text-center
 </div>
 <div class="col col-md-2">
   <div style="text-align:center">
-  <a href='https://${strYoutube}' target="_blank">
-  <i class="fab fa-youtube"style="font-size: 1.8rem;color:#ff0000"></i>
+  <a href='https://${strYoutube}' style="color:#ff0000" "target="_blank">
+  <i class="fab fa-youtube"style="font-size: 1.8rem;"></i>
   </a>
     </div>
   </div>
@@ -183,8 +183,8 @@ text-center
   </div>
 <div class="col col-md-2">
   <div style="text-align:center">
-  <a href='https://${strInstagram}' target="_blank">
-  <i class="fab fa-instagram"style="font-size: 1.8rem;color:#c32aa3"></i>
+  <a href='https://${strInstagram}'style="color:#c32aa3" target="_blank">
+  <i class="fab fa-instagram"style="font-size: 1.8rem;"></i>
   </a>
     </div>
   </div>
