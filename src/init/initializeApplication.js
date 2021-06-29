@@ -23,8 +23,6 @@ export const initializeApplication = () => {
   const background = createDomElement("div", {
     className: "background signed-in",
   });
-  background.style.background =
-    'url("../../assets/WallpaperDog-17048551.jpg")no-repeat center center fixed';
 
   const signOutBtn = createButton("Sign Out", "sign-out-btn", "btn");
   signOutBtn.addEventListener("click", () => {

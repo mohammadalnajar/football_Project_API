@@ -301,6 +301,10 @@ button[data-bs-toggle="tab"]:hover {
   background: linear-gradient(to right, #f7df2a98, #2646be);
   opacity: 0.3;
 }
+.background.background.signed-in {
+  background: url("../assets/WallpaperDog-17048551.jpg") no-repeat center center
+    fixed;
+}
 .background.signed-in::after {
   content: "";
   position: absolute;
