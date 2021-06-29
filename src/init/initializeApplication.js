@@ -34,13 +34,14 @@ export const initializeApplication = () => {
   });
 
   // search Controls =====================
-  const searchControls = createSearchControls();
+
+  // const searchControls = createSearchControls();
 
   // Leagues List =================
   const leaguesList = createLeaguesList();
 
   root.appendChild(background);
-  flexContainer.appendChild(searchControls);
+  // flexContainer.appendChild(searchControls);
   flexContainer.appendChild(leaguesList);
   bigContainer.appendChild(flexContainer);
   root.appendChild(bigContainer);
