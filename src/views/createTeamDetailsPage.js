@@ -8,17 +8,8 @@ import setAttributes from "../utils/setAttributes.js";
 import { createButton } from "./createButton.js";
 
 export const createTeamDetailsPage = async (teams) => {
-  clearDomElement(BIG_CONTAINER_ID);
   const bigContainer = getDomElement(BIG_CONTAINER_ID);
 
-  // adding the loading icon
-  const div = createDomElement("div", {
-    className: "d-flex justify-content-center",
-  });
-  div.innerHTML = `<div class="spinner-border" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>`;
-  bigContainer.appendChild(div);
   // ==============
   // adding a new back btn with nuw functionality
   getDomElement("#back-btn").remove();

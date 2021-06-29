@@ -8,6 +8,7 @@ import setAttributes from "../utils/setAttributes.js";
 import { createButton } from "./createButton.js";
 import createLeagueContent from "./createLeagueContent.js";
 import createLeagueNav from "./createLeagueNav.js";
+import createLoadingIcon from "./createLoadingIcon.js";
 import createTeamDetailsPage from "./createTeamDetailsPage.js";
 import createTeamMap from "./createTeamMap.js";
 
@@ -37,9 +38,16 @@ export const createLeagueTabs = async (league) => {
   const teams = getDomElement(".team-js", "all");
   teams.forEach((team) => {
     team.addEventListener("click", async () => {
+      clearDomElement(BIG_CONTAINER_ID);
+
+      // adding the loading icon
+      createLoadingIcon(bigContainer);
+      //=======================
+      // getting the data
       const { teams } = await fetchData(
         `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${team.dataset.id}`
       );
+      // ======================
       createTeamDetailsPage(teams);
       createTeamMap(teams);
     });

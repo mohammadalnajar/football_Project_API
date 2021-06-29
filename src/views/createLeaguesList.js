@@ -1,22 +1,17 @@
-import { BIG_CONTAINER_ID, ROOT_ID } from "../constants.js";
 import { Data } from "../data.js";
 import fetchData from "../handlers/fetchData.js";
 import createDomElement from "../utils/createDomElement.js";
 import getDomElement from "../utils/getDomElement.js";
 import createLeagueTabs from "./createLeagueTabs.js";
+import createLoadingIcon from "./createLoadingIcon.js";
 
 export const createLeaguesList = () => {
   const bigRow = createDomElement("div", {
     className: "row justify-content-center",
   });
-  const div = createDomElement("div", {
-    className: "d-flex justify-content-center h-loading",
-  });
-  div.innerHTML = `<div class="spinner-border" role="status">
-    <span class="visually-hidden">Loading...</span>
-    </div>`;
 
-  bigRow.appendChild(div);
+  createLoadingIcon(bigRow);
+
   const makeList = async () => {
     const promisesArray = Data.leaguesIds.map(async (num) => {
       const promise = await fetchData(
