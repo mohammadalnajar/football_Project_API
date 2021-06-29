@@ -5,6 +5,7 @@ import { createButton } from "../views/createButton.js";
 import createSignUpForm from "../views/createSignUpForm.js";
 import createSignInForm from "../views/createSignInForm.js";
 import initializeApplication from "./initializeApplication.js";
+import automateText from "../handlers/automateText.js";
 
 export const start = () => {
   const status = JSON.parse(localStorage.getItem("status"));
@@ -12,10 +13,23 @@ export const start = () => {
     initializeApplication();
   } else {
     const root = getDomElement(ROOT_ID);
+    root.classList.add("start-page");
     const startPageContainer = createDomElement("div", {
       id: "start-page__container",
       className: "form",
     });
+    const header = createDomElement("div", { className: "header-text" });
+    header.innerHTML = `
+    <h1>
+      <span class="type1"></span>
+    </h1>
+    `;
+    root.appendChild(header);
+    automateText(
+      "type1",
+      "Welcome in our Football's Records app",
+      "Have Fun!!!"
+    );
     const background = createDomElement("div", { className: "background" });
     const haveAccount = createDomElement("h3");
     const haveNOAccount = createDomElement("h3");

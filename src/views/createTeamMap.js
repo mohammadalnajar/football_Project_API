@@ -1,4 +1,3 @@
-import fetchData from "../handlers/fetchData.js";
 import getMapData from "../handlers/getMapData.js";
 
 export const createTeamMap = (teams) => {

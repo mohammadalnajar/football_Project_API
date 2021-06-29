@@ -1,10 +1,11 @@
 import { SIGN_IN_CONTAINER } from "../constants.js";
+import { Data } from "../data.js";
 import initializeApplication from "../init/initializeApplication.js";
 
 import createDomElement from "../utils/createDomElement.js";
 import getDomElement from "../utils/getDomElement.js";
 
-export const signIn = (e, usernameInput, passwordInput) => {
+export const signIn = (usernameInput, passwordInput) => {
   const signInContainer = getDomElement(SIGN_IN_CONTAINER);
   let wrongPass = false;
   let savedUsers = [];
@@ -23,8 +24,10 @@ export const signIn = (e, usernameInput, passwordInput) => {
           "status",
           JSON.stringify({
             signedIn: true,
+            name: userName,
           })
         );
+        Data.name = userName;
         initializeApplication();
         return user;
       } else if (userName === usernameInput && passWord !== passwordInput) {
