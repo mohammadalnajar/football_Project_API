@@ -2,6 +2,7 @@ import createDomElement from "../utils/createDomElement.js";
 
 export const createLeagueNav = () => {
   const nav = createDomElement("nav");
+  const userName = JSON.parse(localStorage.getItem("status")).name;
   nav.innerHTML = `
   <div class="nav nav-tabs" id="nav-tab" role="tablist">
     <button
@@ -40,6 +41,8 @@ export const createLeagueNav = () => {
     >
       Matches
     </button>
+
+    <div class="teams-header"><h3>${userName} please select your loved Team >> </h3></div>
   </div>`;
   return nav;
 };

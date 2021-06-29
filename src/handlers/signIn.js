@@ -1,4 +1,5 @@
 import { SIGN_IN_CONTAINER } from "../constants.js";
+import { Data } from "../data.js";
 import initializeApplication from "../init/initializeApplication.js";
 
 import createDomElement from "../utils/createDomElement.js";
@@ -23,8 +24,10 @@ export const signIn = (usernameInput, passwordInput) => {
           "status",
           JSON.stringify({
             signedIn: true,
+            name: userName,
           })
         );
+        Data.name = userName;
         initializeApplication();
         return user;
       } else if (userName === usernameInput && passWord !== passwordInput) {

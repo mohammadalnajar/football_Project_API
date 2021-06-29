@@ -9,7 +9,6 @@ import { createButton } from "./createButton.js";
 import createSignInForm from "./createSignInForm.js";
 
 export const createSignUpForm = () => {
-  console.log("sign Up");
   const root = getDomElement(ROOT_ID);
   clearDomElement(ROOT_ID);
   const header = createDomElement("div", { className: "header-text" });
@@ -19,7 +18,7 @@ export const createSignUpForm = () => {
   </h1>
   `;
   root.appendChild(header);
-  automateText("type1", "Welcome in our Football Records app", "Have Fun!!!");
+  automateText("type1", "Welcome in our Football's Records app", "Have Fun!!!");
   const background = createDomElement("div", { className: "background" });
   const signUpContainer = createDomElement("div", {
     id: "sign-up-container",

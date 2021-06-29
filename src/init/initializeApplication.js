@@ -1,4 +1,5 @@
 import { ERROR_CONTAINER_ID, ROOT_ID } from "../constants.js";
+import { Data } from "../data.js";
 import signOut from "../handlers/signOut.js";
 import clearDomElement from "../utils/clearDomElement.js";
 import createDomElement from "../utils/createDomElement.js";
@@ -30,9 +31,18 @@ export const initializeApplication = () => {
   });
   const bigContainer = createDomElement("div", { className: "container" });
   const flexContainer = createDomElement("div", {
-    className: "d-flex flex-column",
+    className: "d-flex flex-column align-items-center",
   });
 
+  // adding welcome message
+  const header = createDomElement("div", {
+    className: "main-header",
+  });
+  const userName = JSON.parse(localStorage.getItem("status")).name;
+  header.innerHTML = `<h1>Hello ${userName}, you are welcome in our Application</h1><br>
+                      <h3>Please select you favorite league to see more details >> </h3>
+  `;
+  flexContainer.appendChild(header);
   // search Controls =====================
 
   // const searchControls = createSearchControls();

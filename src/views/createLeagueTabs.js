@@ -1,6 +1,7 @@
 import { BIG_CONTAINER_ID, ROOT_ID } from "../constants.js";
 import fetchData from "../handlers/fetchData.js";
 import goBackToLeaguesList from "../handlers/goBackToLeaguesList.js";
+import showHideHeader from "../handlers/showHideHeader.js";
 import clearDomElement from "../utils/clearDomElement.js";
 import createDomElement from "../utils/createDomElement.js";
 import getDomElement from "../utils/getDomElement.js";
@@ -35,6 +36,9 @@ export const createLeagueTabs = async (league) => {
   bigContainer.appendChild(nav);
   bigContainer.appendChild(leagueContent);
 
+  // clear header if select else than the teams tab
+  showHideHeader();
+  // ============================
   const teams = getDomElement(".team-js", "all");
   teams.forEach((team) => {
     team.addEventListener("click", async () => {

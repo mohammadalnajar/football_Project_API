@@ -25,7 +25,11 @@ export const start = () => {
     </h1>
     `;
     root.appendChild(header);
-    automateText("type1", "Welcome in our Football Records app", "Have Fun!!!");
+    automateText(
+      "type1",
+      "Welcome in our Football's Records app",
+      "Have Fun!!!"
+    );
     const background = createDomElement("div", { className: "background" });
     const haveAccount = createDomElement("h3");
     const haveNOAccount = createDomElement("h3");

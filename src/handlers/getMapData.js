@@ -13,7 +13,6 @@ export const getMapData = async (country) => {
     `https://api.opencagedata.com/geocode/v1/json?q=${country}&key=e288f99820344951aadb967b654a1d01`
   );
   const { lat, lng } = data.results[0].geometry;
-  console.log(lat, lng);
   marker.setLatLng([lat, lng]);
   mymap.setView([lat, lng]);
 

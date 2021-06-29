@@ -19,7 +19,6 @@ export const createLeagueTeams = async (league) => {
   const { teams } = await fetchData(
     `https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=${league.dataset.id}`
   );
-  console.log(teams);
   let output = "";
   teams.forEach((team) => {
     const { idTeam, strCountry, strTeamBadge, strTeam } = team;
