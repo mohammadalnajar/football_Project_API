@@ -1,5 +1,4 @@
 import createDomElement from "../utils/createDomElement.js";
-import getDomElement from "../utils/getDomElement.js";
 import createLeagueMatches from "./createLeagueMatches.js";
 import createLeagueTable from "./createLeagueTable.js";
 import createLeagueTeams from "./createLeagueTeams.js";

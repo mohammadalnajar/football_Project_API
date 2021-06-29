@@ -1,7 +1,5 @@
 export const Data = {
   name: "",
-  userName: "",
-  passWord: "",
   selectedLeague: {
     dataset: {
       id: "",

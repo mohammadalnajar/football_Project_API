@@ -1,7 +1,6 @@
 import fetchData from "../handlers/fetchData.js";
 import setAttributes from "../utils/setAttributes.js";
 import createDomElement from "../utils/createDomElement.js";
-import { Data } from "../data.js";
 
 export const createLeagueTeams = async (league) => {
   const teamsDiv = createDomElement("div", {

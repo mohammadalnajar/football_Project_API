@@ -44,8 +44,8 @@ export const createSignInForm = () => {
   eye.addEventListener("click", () => {
     showPassWord(passWordInput, eye);
   });
-  signInBtn.addEventListener("click", (e) => {
-    signIn(e, userNameInput.value, passWordInput.value);
+  signInBtn.addEventListener("click", () => {
+    signIn(userNameInput.value, passWordInput.value);
   });
 
   userNameInput.placeholder = "Username";

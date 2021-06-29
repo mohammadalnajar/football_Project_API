@@ -1,5 +1,4 @@
 import { BIG_CONTAINER_ID, ROOT_ID } from "../constants.js";
-import fetchData from "../handlers/fetchData.js";
 import goBackToTeamsList from "../handlers/goBackToTeamsList.js";
 import clearDomElement from "../utils/clearDomElement.js";
 import createDomElement from "../utils/createDomElement.js";
@@ -28,7 +27,6 @@ export const createTeamDetailsPage = async (teams) => {
   clearDomElement(BIG_CONTAINER_ID);
   const {
     idTeam,
-    intFormedYear,
     intStadiumCapacity,
     strCountry,
     strDescriptionEN,
@@ -38,7 +36,6 @@ export const createTeamDetailsPage = async (teams) => {
     strFacebook,
     strInstagram,
     strStadium,
-
     strStadiumThumb,
     strTeam,
     strTeamBadge,

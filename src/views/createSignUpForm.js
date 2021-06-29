@@ -6,7 +6,6 @@ import clearDomElement from "../utils/clearDomElement.js";
 import createDomElement from "../utils/createDomElement.js";
 import getDomElement from "../utils/getDomElement.js";
 import { createButton } from "./createButton.js";
-import randomNum from "./createRandomNum.js";
 import createSignInForm from "./createSignInForm.js";
 
 export const createSignUpForm = () => {
@@ -37,8 +36,8 @@ export const createSignUpForm = () => {
   const registerBtn = createButton("Register", "register-btn", "btn");
   const joinedAlready = createDomElement("a");
   const eye = createDomElement("i", { className: "far fa-eye-slash " });
-  registerBtn.addEventListener("click", (e) => {
-    registerUser(e, userNameInput.value, passWordInput.value);
+  registerBtn.addEventListener("click", () => {
+    registerUser(userNameInput.value, passWordInput.value);
   });
   joinedAlready.addEventListener("click", () => {
     createSignInForm();
