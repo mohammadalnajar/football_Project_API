@@ -3,6 +3,7 @@ export const Data = {
   selectedLeague: {
     dataset: {
       id: "",
+      name: "",
     },
   },
   selectedTeam: "",

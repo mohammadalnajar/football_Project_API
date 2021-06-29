@@ -34,7 +34,8 @@ export const createLeaguesList = () => {
             text-center
           " style="width: 15rem"
           data-country=${strCountry}
-          data-id=${idLeague}>
+          data-id=${idLeague}
+          data-name=${strLeague.split(" ")}>
           <img src=${strBadge} class="card-img-top" alt="..." style="min-height: 50%">
           <div class="card-body d-flex align-items-center">
             <h5 class="card-title">${strLeague}</h5>
@@ -49,8 +50,9 @@ export const createLeaguesList = () => {
     const leagues2 = getDomElement(".league-js", "all");
     leagues2.forEach((league) => {
       league.addEventListener("click", () => {
-        createLeagueTabs(league);
         Data.selectedLeague.dataset.id = league.dataset.id;
+        Data.selectedLeague.dataset.name = league.dataset.name;
+        createLeagueTabs(league);
       });
     });
   };
