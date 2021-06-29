@@ -28,6 +28,9 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
 
   font-family: "Ubuntu", sans-serif;
 }
+#root.start-page {
+  justify-content: space-between;
+}
 .container {
   margin: 60px 0px 20px 0px;
   /* background-color: white; */
@@ -52,6 +55,7 @@ url("https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap"); */
   align-items: center;
   flex-direction: column;
   padding: 30px;
+  margin: 40px;
   background-color: var(--primaryColor);
   color: var(--secondaryColor);
   border-radius: 50px;
@@ -130,9 +134,9 @@ body {
   background-color: white;
   padding: 40px 30px 30px 30px;
   border-radius: 10px;
-  position: absolute;
-  top: 15%;
-  right: 10%;
+  position: relative;
+  /* top: 15%;
+  right: 10%; */
   width: 400px;
 
   /* -webkit-transform: translate(-50%, -50%);
@@ -344,8 +348,18 @@ button[data-bs-toggle="tab"]:hover {
   .tbody img {
     width: 25px;
   }
+  #root.start-page {
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 #mapid {
   height: 180px;
   margin: 20px;
+}
+.header-text {
+  margin: 20px;
+  color: white;
+  max-width: 250px;
+  font-weight: bold;
 }

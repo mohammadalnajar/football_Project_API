@@ -10,7 +10,7 @@ import createSearchControls from "../views/createSearchControls.js";
 export const initializeApplication = () => {
   clearDomElement(ROOT_ID);
   const root = getDomElement(ROOT_ID);
-
+  root.classList.remove("start-page");
   // error handling ========
 
   const errorContainer = getDomElement(ERROR_CONTAINER_ID);

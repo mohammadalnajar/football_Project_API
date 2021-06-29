@@ -1,4 +1,5 @@
 import { ROOT_ID } from "../constants.js";
+import automateText from "../handlers/automateText.js";
 import registerUser from "../handlers/registerUser.js";
 import showPassWord from "../handlers/showPassWord.js";
 import clearDomElement from "../utils/clearDomElement.js";
@@ -12,6 +13,14 @@ export const createSignUpForm = () => {
   console.log("sign Up");
   const root = getDomElement(ROOT_ID);
   clearDomElement(ROOT_ID);
+  const header = createDomElement("div", { className: "header-text" });
+  header.innerHTML = `
+  <h1>
+    <span class="type1"></span>
+  </h1>
+  `;
+  root.appendChild(header);
+  automateText("type1", "Welcome in our Football Records app", "Have Fun!!!");
   const background = createDomElement("div", { className: "background" });
   const signUpContainer = createDomElement("div", {
     id: "sign-up-container",
