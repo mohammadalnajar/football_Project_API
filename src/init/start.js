@@ -4,8 +4,7 @@ import { ROOT_ID } from "../constants.js";
 import { createButton } from "../views/createButton.js";
 import createSignUpForm from "../views/createSignUpForm.js";
 import createSignInForm from "../views/createSignInForm.js";
-import clearDomElement from "../utils/clearDomElement.js";
-import signOut from "../handlers/signOut.js";
+import initializeApplication from "./initializeApplication.js";
 
 export const start = () => {
   const status = JSON.parse(localStorage.getItem("status"));
@@ -17,6 +16,7 @@ export const start = () => {
       id: "start-page__container",
       className: "form",
     });
+    const background = createDomElement("div", { className: "background" });
     const haveAccount = createDomElement("h3");
     const haveNOAccount = createDomElement("h3");
     const signUpBtn = createButton("Sign Up", "sign-up-btn", "btn");
@@ -34,17 +34,10 @@ export const start = () => {
     startPageContainer.appendChild(signUpBtn);
     startPageContainer.appendChild(haveAccount);
     startPageContainer.appendChild(signInBtn);
+    root.appendChild(background);
     root.appendChild(startPageContainer);
     console.log(root);
   }
 };
-export const initializeApplication = () => {
-  clearDomElement(ROOT_ID);
-  const root = getDomElement(ROOT_ID);
-  const signOutBtn = createButton("Sign Out", "sign-out-btn", "btn");
-  signOutBtn.addEventListener("click", () => {
-    signOut();
-  });
-  root.appendChild(signOutBtn);
-};
+
 window.addEventListener("load", start);
