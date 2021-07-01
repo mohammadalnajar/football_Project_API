@@ -8,7 +8,7 @@ import getDomElement from "../utils/getDomElement.js";
 export const signIn = (usernameInput, passwordInput) => {
   const signInContainer = getDomElement(SIGN_IN_CONTAINER);
   let wrongPass = false;
-  let savedUsers = [];
+  const savedUsers = [];
   for (const key in localStorage) {
     if (key.includes("user")) {
       const user = JSON.parse(localStorage[key]);
@@ -16,7 +16,7 @@ export const signIn = (usernameInput, passwordInput) => {
     }
   }
   if (usernameInput && passwordInput) {
-    const foundUser = savedUsers.filter((user) => {
+    const foundUser = savedUsers.find((user) => {
       const { userName, passWord } = user;
       if (userName === usernameInput && passWord === passwordInput) {
         // username + password correct
@@ -42,7 +42,7 @@ export const signIn = (usernameInput, passwordInput) => {
       }
     });
 
-    if (foundUser.length == 0 && wrongPass === false) {
+    if (!foundUser && !wrongPass) {
       // user not found
       const noUser = createDomElement("h3", { className: "no-user" });
       noUser.textContent = "This user name is not registered yet!";
