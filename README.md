@@ -53,7 +53,6 @@ In case you want to run the application on your **local machine** follow the nex
 
 - After cloning the code into your machine please do the next steps:
 
-
 1. Install the following extension in your vscode [Live server Extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
 2. Open your terminal and run the command `live-server`.
 
